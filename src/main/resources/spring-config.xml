@@ -1,42 +1,31 @@
+<!--
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-
-    <bean class="dao.imp.itemImp" id="itemImp1">
-    </bean>
+       xmlns:context="http://www.springframework.org/schema/context"
 
 
 
-    <!--方法1:默认初始化-->
-    <!--
-    &lt;!&ndash;关于bean中的一些属性  &ndash;&gt;
-    &lt;!&ndash;name是给一个bean起别名,scope是指示用IOC创建多个bean对象时,多个bean对象是否是同一个 ,默认为同一个 &ndash;&gt;
-    <bean class="service.imp.serviceImp" id="serviceImp1" scope="prototype" >
-        &lt;!&ndash; 设置service中的属性 &ndash;&gt;
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
 
-        &lt;!&ndash;其中的item是service中需要设置的(成员变量)属性,而itemImp1表示与上面那个id为itemImp1的bean绑定 &ndash;&gt;
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd"
 
-
-        <property name="item" ref="itemImp1">
-
-        </property>
-
-    </bean>
--->
+>
 
 
-
-    <!--方法2:使用factory初始化-->
-    <bean id="serviceFactory" class="factory.serviceFactory">
+&lt;!&ndash; 配置注解开发  &ndash;&gt;
 
 
-
-    </bean>
+    <context:component-scan base-package="dao.imp"/>
+    <context:component-scan base-package="service.imp"/>
 
 
 
 
 
 </beans>
+
+
+-->
